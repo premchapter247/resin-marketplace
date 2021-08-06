@@ -6,7 +6,11 @@ for setup the project please follow below steps
 -- npm install
 
 php artisan migrate
+
 php artisan db:seed or php artisan migrate:refresh --seed ( for migration and seeding the data into db )
+
 php artisan key:generate
+
 npm run dev
+
 php run serve
