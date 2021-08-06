@@ -1,5 +1,6 @@
 The project is based on laravel PHP framework, Its multi-vender project.
 for setup the project please follow below steps
+
 -- Download the template first then
 - create databse in phpmyadmin
 -- composer install
