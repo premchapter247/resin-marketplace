@@ -41,27 +41,27 @@ class UsersAndNotesSeeder extends Seeder
             'hierarchy' => 3,
         ]);
         
-        /*  insert status  */
-        DB::table('status')->insert([
-            'name' => 'ongoing',
-            'class' => 'badge badge-pill badge-primary',
-        ]);
-        array_push($statusIds, DB::getPdo()->lastInsertId());
-        DB::table('status')->insert([
-            'name' => 'stopped',
-            'class' => 'badge badge-pill badge-secondary',
-        ]);
-        array_push($statusIds, DB::getPdo()->lastInsertId());
-        DB::table('status')->insert([
-            'name' => 'completed',
-            'class' => 'badge badge-pill badge-success',
-        ]);
-        array_push($statusIds, DB::getPdo()->lastInsertId());
-        DB::table('status')->insert([
-            'name' => 'expired',
-            'class' => 'badge badge-pill badge-warning',
-        ]);
-        array_push($statusIds, DB::getPdo()->lastInsertId());
+        // /*  insert status  */
+        // DB::table('status')->insert([
+        //     'name' => 'ongoing',
+        //     'class' => 'badge badge-pill badge-primary',
+        // ]);
+        // array_push($statusIds, DB::getPdo()->lastInsertId());
+        // DB::table('status')->insert([
+        //     'name' => 'stopped',
+        //     'class' => 'badge badge-pill badge-secondary',
+        // ]);
+        // array_push($statusIds, DB::getPdo()->lastInsertId());
+        // DB::table('status')->insert([
+        //     'name' => 'completed',
+        //     'class' => 'badge badge-pill badge-success',
+        // ]);
+        // array_push($statusIds, DB::getPdo()->lastInsertId());
+        // DB::table('status')->insert([
+        //     'name' => 'expired',
+        //     'class' => 'badge badge-pill badge-warning',
+        // ]);
+        // array_push($statusIds, DB::getPdo()->lastInsertId());
         /*  insert users   */
         $user = User::create([ 
             'first_name' => 'admin',

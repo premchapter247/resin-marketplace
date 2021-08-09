@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             MenusTableSeeder::class,
             // FolderTableSeeder::class,
             // ExampleSeeder::class,
-            BREADSeeder::class,
+            // BREADSeeder::class,
             EmailSeeder::class,
         ]);
     }

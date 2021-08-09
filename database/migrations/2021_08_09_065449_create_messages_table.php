@@ -15,6 +15,11 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('sender_id')->references('id')->on('users');
+            $table->foreignId('reciver_id')->references('id')->on('users');
+            $table->foreignId('product_id')->references('id')->on('products');
+            $table->string('message')->references('id')->on('users');
+            $table->enum('type', ['0','1','2'])->comment('Text,image,emoji');
             $table->timestamps();
         });
     }
