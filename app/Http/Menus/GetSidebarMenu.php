@@ -24,7 +24,8 @@ class GetSidebarMenu implements MenuInterface{
             ->select('menus.*')
             ->where('menus.menu_id', '=', $menuId)
             ->where('menu_role.role_name', '=', $menuName)
-            ->orderBy('menus.sequence', 'asc')->get();       
+            ->where('status',1)
+            ->orderBy('menus.sequence', 'asc')->get();
     }
 
     private function getGuestMenu( $menuId ){
@@ -62,7 +63,7 @@ class GetSidebarMenu implements MenuInterface{
     public function getAll( $menuId=2 ){
         $this->menu = Menus::select('menus.*')
             ->where('menus.menu_id', '=', $menuId)
-            ->orderBy('menus.sequence', 'asc')->get();  
+            ->orderBy('menus.sequence', 'asc')->get();
         $rfd = new RenderFromDatabaseData;
         return $rfd->render($this->menu);
     }
