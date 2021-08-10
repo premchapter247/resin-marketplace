@@ -52,4 +52,9 @@ class User extends Authenticatable
     protected $attributes = [ 
         'menuroles' => 'user',
     ];
+
+    public function company()
+    {
+       return $this->hasOne(Company::class);
+    }
 }
