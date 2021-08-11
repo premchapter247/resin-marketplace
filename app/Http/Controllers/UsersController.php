@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\User;
-
+Use Redirect;
+use Input;
 class UsersController extends Controller
 {
 
@@ -30,7 +32,41 @@ class UsersController extends Controller
         $users = User::all();
         return view('dashboard.admin.usersList', compact('users', 'you'));
     }
-
+    public function create(){
+        return view('dashboard.admin.userAdd');
+    }
+    public function store(Request $request ){
+        $validator = Validator::make($request->all(), [
+            'company_name' => 'required|string|max:255',
+            'company_reg_year' => 'required|digits:4|integer|min:1900|max:'.(date('Y')+1),
+            'company_reg_num' => 'required|string|max:50',
+            'company_phone' => 'required|digits_between:9,15',
+            'company_reg_doc' => 'required|mimes:jpg,bmp,png',
+            'company_nu_molding_machines' => 'required|digits:15',
+            'company_nu_sites' => 'required|digits:15',
+            //address
+            'company_address_line_1' => 'required|string|max:255',
+            'company_address_line_2' => 'string|max:255',
+            'company_address_zip' => 'required|string|max:8',
+            'company_address_city' => 'required|string|max:15',
+            'company_address_state' => 'required|string|max:20',
+            'company_address_contry' => 'required|string|max:50',
+            //personal
+            'first_name' => 'required|string|max:50',
+            'middle_name' => 'required|string|max:50',
+            'last_name' => 'required|string|max:50',
+            'designation' => 'required|string|max:50',
+            'phone_nu' => 'required|digits_between:9,15',
+            'email' => 'required|string|email|max:255|unique:users',
+        ]);
+        if ($validator->fails()) {
+            return Redirect::to('users/create')
+                ->withErrors($validator);
+        }
+        // Its in process, right now its incompleted. 
+   
+      
+    }
     /**
      * Display the specified resource.
      *

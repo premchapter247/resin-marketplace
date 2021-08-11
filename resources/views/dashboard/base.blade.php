@@ -39,6 +39,8 @@
     <link href="{{ asset('css/flag-icon.min.css') }}" rel="stylesheet"> <!-- icons -->
     <!-- Main styles for this application-->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/material-design-iconic-font.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/form-style.css') }}" rel="stylesheet">
 
     @yield('css')
 
@@ -73,6 +75,9 @@
     <!-- CoreUI and necessary plugins-->
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
     <script src="{{ asset('js/coreui-utils.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.steps.js') }}"></script>
+    <script src="{{ asset('js/form-main.js') }}"></script>
     @yield('javascript')
 
 
